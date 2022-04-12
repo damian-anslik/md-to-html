@@ -1,5 +1,7 @@
 $( document ).ready(function() {
     
+    $('#markdown').css('font-size', parseInt($('#fontSize').val()));
+
     $('#convert').click(function(){
         const format = $('#convertFormat').val();
         const markdown = $('#markdown').val();
@@ -28,6 +30,15 @@ $( document ).ready(function() {
         reader.onload = function(e) {
             $('#markdown').val(e.target.result);
         }
+    });
+
+    $('#fontFamily').change(function(){
+        $('#markdown').css('font-family', $('#fontFamily').val());
+    });
+
+    $('#fontSize').change(function(){
+        const fontSize = parseInt($(this).val());
+        $('#markdown').css('font-size', fontSize);
     });
 });
 

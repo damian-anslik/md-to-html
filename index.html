@@ -17,15 +17,33 @@
     <div class="editor-container">
         <div class="editor-header">
             <input type="file" id="file-input" name="file-input" accept=".txt"/>
-            <select id="convertFormat">
-                <option value="html">HTML</option>
-                <option value="md">Markdown</option>
-                <option value="pdf">PDF</option>
-            </select>
+            <div class="dropdowns">
+                <select id="fontFamily">
+                    <option value="Arial">Arial</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Impact">Impact</option>
+                </select>
+                <select id="fontSize">
+                    <option value="12">12</option>
+                    <option value="16" selected>16</option>
+                    <option value="20">20</option>
+                    <option value="24">24</option>
+                    <option value="28">28</option>
+                </select>
+                <select id="convertFormat">
+                    <option value="html">HTML</option>
+                    <option value="md">Markdown</option>
+                    <option value="pdf">PDF</option>
+                </select>
+                <button class="btn btn-primary" id="convert">Convert</button>
+            </div>
         </div>
         <div class="editor">
             <textarea id="markdown" name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
-            <button class="btn btn-primary" id="convert">Convert</button>
         </div>
         <div id="result">
 
