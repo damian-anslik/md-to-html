@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='editor.css')}}">
     <div class="editor-container">
         <div class="editor-header">
-
+            <div class="menu">
+                <a>Upload File</a>
+                <a>Links</a>
+                
+            </div>
+            <a>Convert to...</a>
         </div>
-        <div class="editor">
-            <textarea name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
-        </div>
+        <textarea name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
     </div>
 
 {% endblock %}
