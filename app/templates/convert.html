@@ -5,15 +5,17 @@
     <div class="editor-container">
         <div class="editor-header">
             <input type="file" id="file-input" name="file-input" accept=".txt" onchange="fileSelected(event)"/>
-            <select id="dropdown-select" name="dropdown-select" onchange="dropdownSelected(event)">
+            <select id="convertFormat">
                 <option value="html">HTML</option>
-                <option value="">PDF</option>
-                <option value="3">Markdown</option>
+                <option value="md">Markdown</option>
             </select>
         </div>
         <div class="editor">
-            <textarea name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
+            <textarea id="markdown" name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
             <button class="btn btn-primary" id="convert">Convert</button>
+        </div>
+        <div id="result">
+
         </div>
     </div>
 
