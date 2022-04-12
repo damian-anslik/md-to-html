@@ -4,13 +4,14 @@ $( document ).ready(function() {
         const format = $('#convertFormat').val();
         const markdown = $('#markdown').val();
         if (format=="md") {
-            return download(markdown, "markdown.md");
+            download(markdown, "markdown.md");
         }
         else if (format=="html") {
             var converter = new showdown.Converter();
             var html = converter.makeHtml(markdown);
-            return download(html, "markdown.html");
+            download(html, "markdown.html");
         }
+        return false;
     });
 
     $('#file-input').change(function(){
