@@ -3,28 +3,29 @@ $(document).ready(function () {
     // Save the users markdown and preferences
     window.addEventListener('beforeunload', function (e) {
         sessionStorage.setItem('markdown', $('#markdown').val());
-        sessionStorage.setItem('fontFamily', $('#fontFamily').val());
-        sessionStorage.setItem('fontSize', parseInt($('#fontSize').val()));
-        sessionStorage.setItem('convertFormat', $('#convertFormat').val());
-        console.log(sessionStorage)
+        localStorage.setItem('fontFamily', $('#fontFamily').val());
+        localStorage.setItem('fontSize', parseInt($('#fontSize').val()));
+        localStorage.setItem('convertFormat', $('#convertFormat').val());
     });
 
-    // Load the users markdown and preferences
-    if (sessionStorage.getItem('markdown')) {
-        $('#markdown').val(sessionStorage.getItem('markdown'));
+    var markdown = sessionStorage.getItem('markdown');
+    var fontFamily = localStorage.getItem('fontFamily');
+    var fontSize = localStorage.getItem('fontSize');
+    var convertFormat = localStorage.getItem('convertFormat');
+
+    // Set the users markdown and preferences
+    if (markdown) {
+        $('#markdown').val(markdown);
     }
-    if (sessionStorage.getItem('fontFamily')) {
-        var fontFamily = sessionStorage.getItem('fontFamily');
+    if (fontFamily) {
         $('#fontFamily').val(fontFamily);
         $('#markdown').css('font-family', fontFamily);
     }
-    if (sessionStorage.getItem('fontSize')) {
-        var fontSize = sessionStorage.getItem('fontSize');
+    if (fontSize) {
         $('#fontSize').val(fontSize);
         $('#markdown').css('font-size', fontSize + 'px');
     }
-    if (sessionStorage.getItem('convertFormat')) {
-        var convertFormat = sessionStorage.getItem('convertFormat');
+    if (convertFormat) {
         $('#convertFormat').val(convertFormat);
     }
 
