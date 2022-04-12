@@ -6,10 +6,17 @@ $( document ).ready(function() {
         if (format=="md") {
             download(markdown, "markdown.md");
         }
-        else if (format=="html") {
-            var converter = new showdown.Converter();
-            var html = converter.makeHtml(markdown);
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(markdown);
+        if (format=="html") {
             download(html, "markdown.html");
+        }
+        if (format=="pdf") {
+            var doc = new jsPDF();
+            doc.fromHTML(html, 15, 15, {
+                'width': 170
+            });
+            doc.save('markdown.pdf');
         }
         return false;
     });
