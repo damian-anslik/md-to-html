@@ -4,14 +4,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='editor.css')}}">
     <div class="editor-container">
         <div class="editor-header">
-            <div class="menu">
-                <a>Upload File</a>
-                <a>Links</a>
-                
-            </div>
-            <a>Convert to...</a>
+            <input type="file" id="file-input" name="file-input" accept=".txt" onchange="fileSelected(event)"/>
+            <select id="dropdown-select" name="dropdown-select" onchange="dropdownSelected(event)">
+                <option value="html">HTML</option>
+                <option value="">PDF</option>
+                <option value="3">Markdown</option>
+            </select>
         </div>
-        <textarea name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
+        <div class="editor">
+            <textarea name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
+            <button class="btn btn-primary" id="convert">Convert</button>
+        </div>
     </div>
 
 {% endblock %}
