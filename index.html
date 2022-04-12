@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert markdown to HTML</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/editor.css">
+    <script src="static/site.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+</head>
+<body>
+    <div class="editor-container">
+        <div class="editor-header">
+            <input type="file" id="file-input" name="file-input" accept=".txt"/>
+            <select id="convertFormat">
+                <option value="html">HTML</option>
+                <option value="md">Markdown</option>
+            </select>
+        </div>
+        <div class="editor">
+            <textarea id="markdown" name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
+            <button class="btn btn-primary" id="convert">Convert</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</body>
+</html>
