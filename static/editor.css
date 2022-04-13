@@ -22,7 +22,7 @@
 #document-title {
     color: white;
     background-color: unset;
-    margin-left: 2rem;
+    margin-left: 1rem;
     border-style: none;
     width: 30%;
 }
@@ -46,7 +46,7 @@
     gap: 1rem;
     width: 50%;
     max-width: 400px;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .settings select {
