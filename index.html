@@ -17,7 +17,7 @@
     <div class="editor-container">
         <div class="editor-header">
             <input type="text" id="document-title" placeholder="Enter a name for your document" spellcheck="false">
-            <div class="dropdowns">
+            <div class="settings">
                 <select id="font-family">
                     <option value="Arial">Arial</option>
                     <option value="Courier">Courier</option>
@@ -42,10 +42,8 @@
                 <button id="convert">Convert</button>
             </div>
         </div>
-        <div class="editor">
-            <textarea spellcheck="false" id="markdown" name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
-        </div>
-        <script src="static/events.js" defer></script>
+        <textarea spellcheck="false" id="markdown" name="markdown" placeholder="Enter your markdown here and hit convert to get the HTML..."></textarea>
     </div>
+    <script src="static/events.js" defer></script>
 </body>
 </html>
