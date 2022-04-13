@@ -1,15 +1,15 @@
-$('#convertFormat').change(function () {
+$('#output-format').change(function () {
     const format = $(this).val();
-    localStorage.setItem('convertFormat', format);
+    localStorage.setItem('format', format);
 });
 
-$('#fontFamily').change(function () {
+$('#font-family').change(function () {
     const fontFamily = $(this).val();
     localStorage.setItem('fontFamily', fontFamily);
     $('#markdown').css('font-family', fontFamily);
 });
 
-$('#fontSize').change(function () {
+$('#font-size').change(function () {
     const fontSize = parseInt($(this).val());
     localStorage.setItem('fontSize', fontSize);
     $('#markdown').css('font-size', fontSize);
@@ -20,30 +20,31 @@ $('#markdown').change(function () {
     sessionStorage.setItem('markdown', markdown);
 });
 
-$('.document-title').change(function () {
+$('#document-title').change(function () {
     const title = $(this).val();
     sessionStorage.setItem('title', title);
 });
 
 $('#convert').click(function () {
-    const format = $('#convertFormat').val();
-    const markdown = $('#markdown').val();
-    const title = $('.document-title').val();
-    const filename = title + '.' + format;
-    if (format == "md") {
-        download(markdown, filename);
+    const DEFAULT_DOC_TITLE = 'untitled-markdown';
+    let document = {
+        title: $('#document-title').val() || DEFAULT_DOC_TITLE,
+        markdown: $('#markdown').val(),
+        format: $('#output-format').val()
+    };
+    let filename = document.title + '.' + document.format;
+    if (document.format === "md") {
+        download(document.markdown, filename, 'text/plain');
+        return false;
+    } 
+    let html = new showdown.Converter().makeHtml(document.markdown);
+    if (document.format === 'pdf') {
+        let pdf = new jsPDF();
+        pdf.fromHTML(html, 10, 10);
+        pdf.save(filename);
     }
-    var converter = new showdown.Converter();
-    var html = converter.makeHtml(markdown);
-    if (format == "html") {
-        download(html, filename);
-    }
-    if (format == "pdf") {
-        var doc = new jsPDF();
-        doc.fromHTML(html, 15, 15, {
-            'width': 170
-        });
-        doc.save(filename);
+    if (document.format === 'html') {
+        download(html, filename, 'text/html');
     }
     return false;
 });

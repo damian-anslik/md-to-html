@@ -16,10 +16,9 @@
 <body>
     <div class="editor-container">
         <div class="editor-header">
-            <!-- Set document title -->
-            <input type="text" class="document-title" placeholder="Enter a name for your document" spellcheck="false">
+            <input type="text" id="document-title" placeholder="Enter a name for your document" spellcheck="false">
             <div class="dropdowns">
-                <select id="fontFamily">
+                <select id="font-family">
                     <option value="Arial">Arial</option>
                     <option value="Courier">Courier</option>
                     <option value="Times New Roman">Times New Roman</option>
@@ -28,19 +27,19 @@
                     <option value="Comic Sans MS">Comic Sans MS</option>
                     <option value="Impact">Impact</option>
                 </select>
-                <select id="fontSize">
+                <select id="font-size">
                     <option value="12">12</option>
-                    <option value="16" selected>16</option>
+                    <option value="16">16</option>
                     <option value="20">20</option>
                     <option value="24">24</option>
                     <option value="28">28</option>
                 </select>
-                <select id="convertFormat">
+                <select id="output-format">
                     <option value="html">HTML</option>
                     <option value="md">Markdown</option>
                     <option value="pdf">PDF</option>
                 </select>
-                <button class="btn btn-primary" id="convert">Convert</button>
+                <button id="convert">Convert</button>
             </div>
         </div>
         <div class="editor">

@@ -3,7 +3,7 @@ $(document).ready(function () {
     var preferences = {
         fontFamily: localStorage.getItem('fontFamily') || 'Arial',
         fontSize: localStorage.getItem('fontSize') || '16',
-        convertFormat: localStorage.getItem('convertFormat') || 'md',
+        format: localStorage.getItem('format') || 'md',
     };
 
     var sessionData = {
@@ -12,10 +12,10 @@ $(document).ready(function () {
     };
     
     $('#markdown').val(sessionData.markdown);
-    $('.document-title').val(sessionData.title);
-    $('#fontFamily').val(preferences.fontFamily);
-    $('#fontSize').val(preferences.fontSize);
-    $('#convertFormat').val(preferences.convertFormat);
+    $('#document-title').val(sessionData.title);
+    $('#font-family').val(preferences.fontFamily);
+    $('#font-size').val(preferences.fontSize);
+    $('#output-format').val(preferences.format);
     $('#markdown').css('font-family', preferences.fontFamily);
     $('#markdown').css('font-size', parseInt(preferences.fontSize));
     

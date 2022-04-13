@@ -18,24 +18,8 @@
     justify-content: space-between;
 }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
 
-.editor-header a {
-    background-color: #3ba748;
-    padding-block: 0.5rem;
-    padding-inline: 1rem;
-    display: block;
-    text-decoration: none;
-    border-radius: 0.5rem;
-}
-
-.document-title {
+#document-title {
     margin-right: 1rem;
     width: 50%;
     max-width: 500px;
