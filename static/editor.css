@@ -74,8 +74,8 @@
 #markdown {
     margin-top: 4rem;
     margin-bottom: 1rem;
-    width: 50%;
-    height: 85vh;
+    max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -87,19 +87,10 @@
     padding: 1rem;
 }
 
-@media (max-width: 1000px) {
-    #markdown {
-        width: 90%;
-        height: 85vh;
-    }
-}
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     #markdown {
         margin-top: 3rem;
-        width: 100%;
-        height: 85vh;
-        padding: 1rem;
+        margin-bottom: 0;
     }
     #font-family {
         display: none;
@@ -115,63 +106,3 @@
         padding: 0;
     }
 }
-/* 
-
-#document-title {
-    margin-right: 1rem;
-    width: 50%;
-    max-width: 500px;
-    font-size: 1.5rem;
-    background-color: #fafafa;
-    border: none;
-    outline: none;
-}
-
-.editor {
-    width: 80%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-button {
-    width: 100%;
-    padding-block: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: #3ba748;
-    color: #fff;
-    text-decoration: none;
-    border-width: 1px;
-    font-weight: bold;
-}
-
-textarea {
-    width: 100%;
-    border-radius: 0.5rem;
-    height: 90vh;
-    resize: none;
-    padding: 1rem;
-    box-sizing: border-box;
-    background: #fff;
-    z-index: 0;
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-select {
-    border-radius: 0.5rem;
-    height: 2rem;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    background: #fff;
-    z-index: 0;
-    color: #000;
-}
-
-input {
-    color: #000;
-} */
