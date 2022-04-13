@@ -11,13 +11,13 @@ $(document).ready(function () {
         markdown: sessionStorage.getItem('markdown') || '',
     };
     
-    $('#markdown').val(sessionData.markdown);
     $('#document-title').val(sessionData.title);
+    $('#markdown').val(sessionData.markdown);
+    $('#markdown').css('font-family', preferences.fontFamily);
+    $('#markdown').css('font-size', parseInt(preferences.fontSize));
     $('#font-family').val(preferences.fontFamily);
     $('#font-size').val(preferences.fontSize);
     $('#output-format').val(preferences.format);
-    $('#markdown').css('font-family', preferences.fontFamily);
-    $('#markdown').css('font-size', parseInt(preferences.fontSize));
     
     // Save the users markdown on page refresh
     window.addEventListener('beforeunload', function (e) {
