@@ -19,4 +19,9 @@ $(document).ready(function () {
     $('#markdown').css('font-family', preferences.fontFamily);
     $('#markdown').css('font-size', parseInt(preferences.fontSize));
     
+    // Save the users markdown on page refresh
+    window.addEventListener('beforeunload', function (e) {
+        var markdown = $('#markdown').val();
+        sessionStorage.setItem('markdown', markdown);
+    });
 });

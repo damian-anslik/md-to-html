@@ -1,10 +1,10 @@
 $('#convertFormat').change(function () {
-    const format = $('#convertFormat').val();
+    const format = $(this).val();
     localStorage.setItem('convertFormat', format);
 });
 
 $('#fontFamily').change(function () {
-    const fontFamily = $('#fontFamily').val();
+    const fontFamily = $(this).val();
     localStorage.setItem('fontFamily', fontFamily);
     $('#markdown').css('font-family', fontFamily);
 });
@@ -15,15 +15,14 @@ $('#fontSize').change(function () {
     $('#markdown').css('font-size', fontSize);
 });
 
+$('#markdown').change(function () {
+    const markdown = $(this).val();
+    sessionStorage.setItem('markdown', markdown);
+});
+
 $('.document-title').change(function () {
     const title = $(this).val();
     sessionStorage.setItem('title', title);
-});
-
-// Save the users markdown on page refresh
-window.addEventListener('beforeunload', function (e) {
-    var markdown = $('#markdown').val();
-    sessionStorage.setItem('markdown', markdown);
 });
 
 $('#convert').click(function () {
