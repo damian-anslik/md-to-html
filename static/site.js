@@ -1,28 +1,22 @@
 $(document).ready(function () {
     
-    var markdown = sessionStorage.getItem('markdown');
-    var documentTitle = sessionStorage.getItem('title');
-    var fontFamily = localStorage.getItem('fontFamily');
-    var fontSize = localStorage.getItem('fontSize');
-    var convertFormat = localStorage.getItem('convertFormat');
+    var preferences = {
+        fontFamily: localStorage.getItem('fontFamily') || 'Arial',
+        fontSize: localStorage.getItem('fontSize') || '16',
+        convertFormat: localStorage.getItem('convertFormat') || 'md',
+    };
 
-    // Set the users markdown and preferences
-    if (markdown) {
-        $('#markdown').val(markdown);
-    }
-    if (fontFamily) {
-        $('#fontFamily').val(fontFamily);
-        $('#markdown').css('font-family', fontFamily);
-    }
-    if (fontSize) {
-        $('#fontSize').val(fontSize);
-        $('#markdown').css('font-size', fontSize + 'px');
-    }
-    if (convertFormat) {
-        $('#convertFormat').val(convertFormat);
-    }
-    if (documentTitle) {
-        $('.document-title').val(documentTitle);
-    }
+    var sessionData = {
+        title: sessionStorage.getItem('title') || '',
+        markdown: sessionStorage.getItem('markdown') || '',
+    };
+    
+    $('#markdown').val(sessionData.markdown);
+    $('.document-title').val(sessionData.title);
+    $('#fontFamily').val(preferences.fontFamily);
+    $('#fontSize').val(preferences.fontSize);
+    $('#convertFormat').val(preferences.convertFormat);
+    $('#markdown').css('font-family', preferences.fontFamily);
+    $('#markdown').css('font-size', parseInt(preferences.fontSize));
     
 });
