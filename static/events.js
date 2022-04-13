@@ -1,12 +1,3 @@
-$('#file-input').change(function () {
-    const file = this.files[0];
-    const reader = new FileReader();
-    reader.readAsText(file);
-    reader.onload = function (e) {
-        $('#markdown').val(e.target.result);
-    }
-});
-
 $('#convertFormat').change(function () {
     const format = $('#convertFormat').val();
     localStorage.setItem('convertFormat', format);
